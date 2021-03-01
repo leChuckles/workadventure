@@ -3,6 +3,7 @@ import {UserInputManager} from "../Phaser/UserInput/UserInputManager";
 import {RoomConnection} from "../Connexion/RoomConnection";
 import {PlayGlobalMessageInterface} from "../Connexion/ConnexionModels";
 import {ADMIN_URL} from "../Enum/EnvironmentVariable";
+import {AdminMessageEventTypes} from "../Connexion/AdminMessagesService";
 
 export const CLASS_CONSOLE_MESSAGE = 'main-console';
 export const INPUT_CONSOLE_MESSAGE = 'input-send-text';
@@ -10,13 +11,16 @@ export const UPLOAD_CONSOLE_MESSAGE = 'input-upload-music';
 export const INPUT_TYPE_CONSOLE = 'input-type';
 export const VIDEO_QUALITY_SELECT = 'select-video-quality';
 
-export const AUDIO_TYPE = 'audio';
-export const MESSAGE_TYPE = 'message';
+export const AUDIO_TYPE = AdminMessageEventTypes.audio;
+export const MESSAGE_TYPE = AdminMessageEventTypes.admin;
 
 interface EventTargetFiles extends EventTarget {
     files: Array<File>;
 }
 
+/**
+ * @deprecated
+ */
 export class ConsoleGlobalMessageManager {
 
     private readonly divMainConsole: HTMLDivElement;
